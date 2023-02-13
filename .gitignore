@@ -1,0 +1,4 @@
+# all the data must be provided
+./data
+# python cache
+./__pycache__
