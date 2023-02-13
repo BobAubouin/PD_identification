@@ -42,15 +42,17 @@ H = cas.Function('Output', [xp, xr, C50p, C50r, beta, gamma, Emax, E0], [BIS],
 plot = True  # use plot to display all the figure for each patient
 
 # dataset carachteristic
-sampling_time = 2
+sampling_time = 5
 propo_concentration = 10  # mg/ml
 remi_concentration = 50  # µg/ml
 
 data_folder_path = './data/'
 dir_list = os.listdir(data_folder_path)
+patient_fiche = pd.read_csv(data_folder_path + 'patients_fiche.csv')
 
 output_dataframe = pd.DataFrame()
 
+count = 0
 # Process each file i the folder "data"
 for file_name in dir_list:
     if 'data' not in file_name and 'Patient' not in file_name:
@@ -58,22 +60,15 @@ for file_name in dir_list:
     # get patient id from fil name
     _, Patient_id, _ = file_name.split("_", 2)
     Patient_id = int(Patient_id)
-    print('Patient ' + str(Patient_id))
+    count += 1
+    print('Patient ' + str(Patient_id) + ', ' + str(count) + '/70')
     Patient_df = pd.read_csv("./data/" + file_name)
 
-    # Patient characteristic
-    if Patient_id == 1:
-        age = 31
-        weight = 49
-        height = 163
-        gender = 0
-
-    # Patient 2
-    elif Patient_id == 2:
-        age = 44
-        weight = 57
-        height = 168
-        gender = 0
+    # patient information from the fiche
+    age = int(patient_fiche.loc[patient_fiche['No.'] == Patient_id, 'Age'])
+    height = int(patient_fiche.loc[patient_fiche['No.'] == Patient_id, 'Height'])
+    weight = int(patient_fiche.loc[patient_fiche['No.'] == Patient_id, 'Weight'])
+    gender = int(patient_fiche.loc[patient_fiche['No.'] == Patient_id, 'Sex'] == 'M')
 
     istart_propo = 0
     istart_remi = 0
