@@ -2,15 +2,15 @@
 Code to indentify the PD parameter of the PRopofol Remifentanil to BIS interaction on clinical data.
 
 ## Usage
-First, all the patient data must be convert to*.csv* files and placed in the *data* folder with the name *patient_i_data.csv* where *i* is the patient id.
-To transfert data from matlab to csv the matlab script *data_transfert.m* can be used.
+First, all the patient data must be convert to *.csv* files and placed in the *data* folder with the name *patient_i_data.csv* where *i* is the patient id.
+To transfert data from Matlab to *.csv* the matlab script *data_transfert.m* can be used.
 
-Then the needed packages for python script must be installed with the command line:
-'''
+The needed packages for python script must be installed with the command line:
+```python
 pip install -r requirements.txt
-'''
+```
 
-Then the script *dataset_identification.py* can be launched. The output table is stored as a *.csv* file in the output folder.
+Finally, the script *dataset_identification.py* can be launched. The output table is stored as a *.csv* file in the output folder.
 
 ## Files description
 * *dataset_identification.py* : PD identification of the full dataset.
