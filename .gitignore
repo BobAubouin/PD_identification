@@ -1,4 +1,5 @@
 # all the data must be provided
-./data
+data/
+outputs/
 # python cache
-./__pycache__
+__pycache__/
