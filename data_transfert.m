@@ -19,7 +19,7 @@ for i=1:length(File_list)
         saveas(gcf,"outputs/BIS patient " + Patient_id + ".png");
         close
 
-        writetimetable(TT_resampled, "data/Patient_" + Patient_id + "_data.csv");
+        writetimetable(TT_resampled, "data/raw/Patient_" + Patient_id + "_data.csv");
         save("outputs/" + File_list(i).name, "TT_resampled");
         
     end

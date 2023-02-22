@@ -21,7 +21,7 @@ remi_concentration = 50  # µg/ml
 Patient_id = 1
 # Patient_1_df = pd.read_csv("./data/Patient_" + str(Patient_id) + "_data.csv")
 # Patient_1_df = Patient_1_df[['BIS1', 'InfRate_TT_prop', 'CeProp', 'CpProp', 'InfRate_TT_remi', 'CeRemi', 'CpRemi']]
-Patient_1_df = pd.read_csv("./data/Patien_" + str(Patient_id) + "_induction.csv")
+Patient_1_df = pd.read_csv("./data/raw/Patient_" + str(Patient_id) + "_data.csv")
 
 # Patient 1
 if Patient_id == 1:
